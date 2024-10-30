@@ -36,9 +36,9 @@
 	
 	<dependencies>
 		<dependency>
-  			<groupId>com</groupId>
+  			<groupId>com.mt</groupId>
   			<artifactId>mail</artifactId>
-  			<version>1.0</version>
+  			<version>1.00</version>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
