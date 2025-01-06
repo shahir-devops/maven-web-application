@@ -113,11 +113,12 @@
 		<finalName>maven-web-application</finalName>
 		
 		<plugins>
-			<plugin> //for online code only
+			<plugin> 
 				 <groupId>org.apache.maven.plugins</groupId>
             			<artifactId>maven-war-plugin</artifactId>
             			<version>3.3.2</version>
 			</plugin>
+			<!-- online code only -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
