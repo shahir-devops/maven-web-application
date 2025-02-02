@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: mavenwebapp
 spec:
+  revisionHistoryLimit: 10
   replicas: 2
   strategy:
     type: Recreate
