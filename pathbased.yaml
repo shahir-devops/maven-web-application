@@ -1,7 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: maven network
+  name: mavenwebnetwork
+  namespace: test-ns
 spec:
   rules:
   - host: mithuntech.com
