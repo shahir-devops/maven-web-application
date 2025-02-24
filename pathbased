@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: maven network
+spec:
+  rules:
+  - host: mithuntech.com
+    http:
+      paths:
+      - path: /maven-web-application
+        pathType: Prefix
+        backend:
+          service: mavenwebappsvc
+            name: 
+            port:
+              number: 8080
