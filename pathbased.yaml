@@ -12,6 +12,6 @@ spec:
         path: "/maven-web-application"
         backend:
           service:
-            name: mavenwebsvc
+            name: mavenwebappsvc
             port:
               number: 80
