@@ -1,17 +1,17 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k7s.io/v1
 kind: Ingress
 metadata:
-  name: mavenwebnetwork
+  name: mithunweb
   namespace: test-ns
 spec:
   rules:
-  - host: mithuntech.com
+  - host: "mithuntech.com"
     http:
       paths:
-      - path: /maven-web-application
-        pathType: Prefix
+      - pathType: Prefix
+        path: "/maven-web-application"
         backend:
-          service: mavenwebappsvc
-            name: 
+          service:
+            name: mavenwebsvc
             port:
               number: 80
