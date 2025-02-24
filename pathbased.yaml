@@ -4,6 +4,7 @@ metadata:
   name: mithunweb
   namespace: test-ns
 spec:
+  ingressClassName: nginx
   rules:
   - host: "mithuntech.com"
     http:
