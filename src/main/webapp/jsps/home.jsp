@@ -12,7 +12,7 @@
 <h1 align="center">Welcome to Mithun Technologies Private Ltd. Ph No: +91-9980923226,+91-9900012028</h1>
 <h1 align="center"> Mithun Technologies- Very Good Training center for DevOps with AWS,Azure Admin & Azure DevOps ,Terraform & AWS Solution Architect in Bangalore India.Teaching Real Time scnerios</h1>
 
-<h2> Trainer Name: Balaji Reddy Lachhannagari</h2>
+<h2> Trainer Name: Balaji Reddy Lachhannagari & bhaskar</h2>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
