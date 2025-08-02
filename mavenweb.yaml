@@ -17,7 +17,7 @@ spec:
       - name: mavenwebapp
         image: shahir5890/mavenk8:TAG 
         ports:
-        - containerPort: 8080
+        - containerPort: 9090
         resources:
           limits:
             cpu: 500m
@@ -28,14 +28,14 @@ spec:
         livenessProbe:
           httpGet:
             path: /maven-web-application
-            port: 8080
+            port: 9090
           initialDelaySeconds: 30
           periodSeconds: 20
           timeoutSeconds: 10
         readinessProbe:
           httpGet:
             path: /maven-web-application
-            port: 8080
+            port: 9090
           initialDelaySeconds: 30
           periodSeconds: 20
           timeoutSeconds: 10
@@ -51,5 +51,5 @@ spec:
     app: maven
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 9090
     nodePort: 30000
