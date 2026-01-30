@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: mavenwebappcontainer
-          image: shahir5890/maven_k8:TAG
+          image: shahir5890/mavenbuild:TAG
           ports:
             - containerPort: 8080
           resources:
