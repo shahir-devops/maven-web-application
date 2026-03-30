@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: mavenweb
-        image: shahir5890/mavendocker:6
+        image: shahir5890/mavendocker:1.2.version
         ports:
         - containerPort: 8080
         resources:
