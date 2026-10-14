@@ -1,56 +1,187 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.net.*" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.net.InetAddress" %>
+
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MithunTechnologies- Home Page</title>
-<link href="images/mithunlogo.jpg" rel="icon">
+    <meta charset="UTF-8">
+    <title>My Web Application</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #333;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 16px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h2 {
+            color: #5b4bdb;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .value {
+            color: #222;
+            overflow-wrap: anywhere;
+            text-align: right;
+        }
+
+        .status {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 25px 12px;
+            }
+
+            .header h1 {
+                font-size: 25px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .info {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .value {
+                text-align: left;
+            }
+        }
+    </style>
 </head>
-</head>
+
 <body>
-<h1 align="center">Welcome to Mithun Technologies Private Ltd. Ph No: +91-9980923226,+91-9900012028</h1>
-<h1 align="center"> Mithun Technologies- Very Good Training center for DevOps with AWS,Azure Admin & Azure DevOps ,Terraform & AWS Solution Architect in Bangalore India.Teaching Real Time scnerios</h1>
 
-<h2> Trainer Name: Balaji Reddy Lachhannagari</h2>
-<hr>
-<br>
-	<h1><h3> Server Side IP Address </h3><br>
+<div class="container">
 
-<% 
-String ip = "";
-InetAddress inetAddress = InetAddress.getLocalHost();
-ip = inetAddress.getHostAddress();
-out.println("Server Host Name :: "+inetAddress.getHostName()); 
-%>
-<br>
-<%out.println("Server IP Address :: "+ip);%>
-</h1>
-<br>
-<h1><h3> Client Side IP Address </h3><br>
-<%out.print( "Client IP Address :: " + request.getRemoteAddr() ); %><br>
-<%out.print( "Client Name Host :: "+ request.getRemoteHost() );%><br></h1>
-<hr>
-<div style="text-align: center;">
-	<span>
-		<img src="images/mithunlogo.jpg" alt="" width="100">
-	</span>
-	<span style="font-weight: bold;">
-		Mithun Technologies, 
-		Martha Halli, Above ICICI Bank, Beside Meghana Foods,
-		Bangalore,
-		+91-9980923226,+91-9900012028
-		devopstrainingblr@gmail.com
-		<br>
-		<a href="mailto:devopstrainingblr@gmail.com">Mail to Mithun Technologies</a>
-	</span>
+    <div class="header">
+        <h1>Welcome to My Web Application</h1>
+        <p>Java | Maven | JSP</p>
+    </div>
+
+    <%
+        String hostName = "Unavailable";
+        String serverIP = "Unavailable";
+
+        try {
+            InetAddress inetAddress = InetAddress.getLocalHost();
+            hostName = inetAddress.getHostName();
+            serverIP = inetAddress.getHostAddress();
+        } catch (Exception e) {
+            application.log("Unable to retrieve server information", e);
+        }
+
+        String clientIP = request.getRemoteAddr();
+    %>
+
+    <div class="card">
+        <h2>🖥️ Server Information</h2>
+
+        <div class="info">
+            <span class="label">Host Name</span>
+            <span class="value"><%= hostName %></span>
+        </div>
+
+        <div class="info">
+            <span class="label">Server IP Address</span>
+            <span class="value"><%= serverIP %></span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🌐 Client Information</h2>
+
+        <div class="info">
+            <span class="label">Client IP Address</span>
+            <span class="value"><%= clientIP %></span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🚀 Application Status</h2>
+        <p>
+            <span class="status">● Application Running</span>
+        </p>
+        <br>
+        <p>Your Java web application is ready for testing.</p>
+    </div>
+
+    <div class="footer">
+        <p>Java Maven Web Application | Testing Environment</p>
+    </div>
+
 </div>
-<hr>
-	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
-<hr>
-<hr>
-<p align=center>Mithun Technologies - Consultant, Training, Development Center.</p>
-<p align=center><small>Copyrights 2022 by <a href="http://mithuntechnologies.com/">Mithun Technologies,Bengaluru</a> </small></p>
 
 </body>
 </html>
